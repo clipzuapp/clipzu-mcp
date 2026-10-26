@@ -4,10 +4,10 @@
 |---|---|
 | Skill is absent | Install into this client's project skill directory, retain references, and restart/refresh the client. Check personal/managed installations for a same-name skill. Do not install a second competing set. |
 | CLI discovers extra legacy Clipzu skills | Review installed paths. Keep only the intended canonical five in this project/client scope; do not automatically import instructions from an application checkout. |
-| OAuth registration error | Supply the Clipzu-approved public client ID. The service does not implement dynamic registration or client metadata registration. |
+| OAuth registration error | Supply the registered public client ID for OAuth, or create your own personal token in Settings → Developer → Access Tokens. The service does not implement dynamic registration or client metadata registration. |
 | Callback mismatch | Check the exact registered host/path and client callback behavior. `localhost` and `127.0.0.1` are different hosts. Do not change server policy or reuse another client's identity. |
 | Consent grants reads but writes fail | Confirm projects:write/media:read and, for export, exports:write. Client-side tool discovery does not grant scopes. Reauthorize normally with the required scope set. |
-| 401 / 403 | See [authentication](authentication.md). Confirm private account approval, expiry, revocation and required scope without printing the credential. |
+| 401 / 403 | See [authentication](authentication.md). Confirm verified active account status, expiry, revocation and required scope without printing the credential. |
 | Project/asset/job not found | Use this owner's listings and actual returned IDs. Do not use an identifier from another account or assume it exists. |
 | Revision conflict | Read current revision and reconcile the intended edit; never force or overwrite a newer save. |
 | Invalid clip addition | `add_clip`/`add_audio` have no `name` argument; source dimensions/durations come from owned assets. Review exact schemas. |

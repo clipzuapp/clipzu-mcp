@@ -22,4 +22,4 @@ Nested compositions, native 3D cameras, procedural systems, motion blur, editabl
 
 Image alpha can supply a fixed silhouette, multiple image clips can imply flat layered depth, and word/line images can provide kinetic typography. Describe those methods honestly. They do not grant a mask editor, perspective camera or native per-character text system.
 
-The hosted service remains private to approved testers. Public distribution of instructions changes neither membership nor authentication. Client transport compatibility is distinct from a particular client's registered OAuth callback and granted write scopes.
+The hosted service accepts individual credentials from verified, active Clipzu accounts without tester approval. Authentication, scope and ownership checks remain mandatory. Client transport compatibility is distinct from a particular client's registered OAuth callback and granted write scopes.

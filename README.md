@@ -1,6 +1,6 @@
 # Clipzu MCP & Agent Skills
 
-Original design, editing, motion and verification skills for agents connected to Clipzu's hosted MCP service. Public distribution: [clipzuapp/clipzu-mcp](https://github.com/clipzuapp/clipzu-mcp). **MCP access is currently private to approved testers. Installing these files does not grant account access or enable a public rollout.**
+Original design, editing, motion and verification skills for agents connected to Clipzu's hosted MCP service. Public distribution: [clipzuapp/clipzu-mcp](https://github.com/clipzuapp/clipzu-mcp). **Use your own verified, active Clipzu account. Anonymous access is denied; credentials grant only their selected scopes and your own resources.**
 
 The editing/rendering backend stays hosted by Clipzu at `https://clipzu.com/mcp`. This package contains instructions and examples, not a local MCP server, renderer or copy of the application. You need your own authorized Clipzu account, ready owned media and a compatible client.
 
@@ -18,7 +18,7 @@ For an optional noninteractive client example, use `npx skills add clipzuapp/cli
 
 The public repository contains this distribution only. No private Clipzu application checkout is required.
 
-Next, follow [MCP client setup](examples/mcp-client-setup.md) to connect and authorize. A pre-registered client ID and matching callback must be supplied by Clipzu for OAuth. Private membership is enforced independently. There is no bundled credential, shared master token or automatic client registration.
+Open **Clipzu Settings → Developer → Access Tokens** to create a named, scoped credential, copy it once, view metadata and revoke it. No tester approval is required. Follow [MCP client setup](examples/mcp-client-setup.md) to connect. OAuth still requires a registered client ID and matching callback; personal tokens work with compatible clients that securely send a Bearer header. There is no bundled credential, shared master token or automatic client registration.
 
 ## Five focused skills
 

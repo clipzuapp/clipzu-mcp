@@ -1,6 +1,6 @@
 # Client setup
 
-Skill installation and account authorization are separate steps. Use a supported current client and your own approved Clipzu account. The hosted service stays at `https://clipzu.com/mcp`; there is no local Clipzu server to launch.
+Skill installation and account authorization are separate steps. Use a supported current client and your own verified, active Clipzu account. The hosted service stays at `https://clipzu.com/mcp`; there is no local Clipzu server to launch.
 
 ## Common connection requirements for any client
 
@@ -9,7 +9,7 @@ Skill installation and account authorization are separate steps. Use a supported
 | Endpoint | `https://clipzu.com/mcp` |
 | Transport | Standard MCP Streamable HTTP with a compatible negotiated protocol |
 | Authentication | Individual account authorization using supported OAuth S256 PKCE with a registered public client/callback, or an owner-issued scoped token through a secure header/environment facility |
-| Permissions | Only the scopes required by the task; private tester approval remains independent of client choice |
+| Permissions | Only the scopes required by the task; verified active account status is enforced independently of client choice |
 | Discovery | Use standard MCP tool discovery, then call `clipzu_capabilities` before planning edits |
 | Skills | Optional open Agent Skills instructions; they are not required to connect to MCP or invoke its tools |
 
@@ -42,7 +42,7 @@ You can obtain the standalone folder using GitHub's **Download ZIP** on [clipzua
 
 ## Codex: OAuth
 
-Clipzu must supply a registered **public** OAuth client ID and matching callback for this client. `CLIPZU_OAUTH_CLIENT_ID` below is a placeholder environment variable containing that non-secret identity, not an access token.
+OAuth requires a registered **public** client ID and matching callback. This is client registration, not tester/account approval. For immediate self-service access, create a personal token in Clipzu Settings → Developer → Access Tokens and use a compatible client's secure Bearer-header setting. `CLIPZU_OAUTH_CLIENT_ID` below is a placeholder environment variable containing that non-secret identity, not an access token.
 
 ```powershell
 codex mcp add clipzu --url https://clipzu.com/mcp --oauth-client-id $env:CLIPZU_OAUTH_CLIENT_ID
@@ -51,13 +51,13 @@ codex mcp login clipzu --scopes projects:read,projects:write,media:read,exports:
 
 Complete ordinary Clipzu login/consent in the browser. Keep the native callback URL exactly as registered, including its host/path; native loopback port handling is client/provider specific. Do not request a client secret: Clipzu currently uses public clients with PKCE. Confirm scopes in consent and use a read-only call before edits. See [official Codex MCP setup](https://learn.chatgpt.com/docs/extend/mcp?surface=cli).
 
-If Clipzu has instead issued an individual scoped personal agent token, Codex can read it from a private process environment:
+After creating your own scoped personal agent token in Settings → Developer → Access Tokens, Codex can read it from a private process environment:
 
 ```sh
 codex mcp add clipzu --url https://clipzu.com/mcp --bearer-token-env-var CLIPZU_AGENT_TOKEN
 ```
 
-Set the variable through a secure environment facility, not a committed file, literal shell command or agent prompt. This is an alternative to OAuth, not a way around approval. Do not combine conflicting OAuth and personal-token configurations.
+Set the variable through a secure environment facility, not a committed file, literal shell command or agent prompt. This is an alternative to OAuth using your own account permissions. Do not combine conflicting OAuth and personal-token configurations.
 
 ## Claude Code: OAuth
 
