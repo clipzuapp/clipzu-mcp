@@ -15,7 +15,17 @@ Skill installation and account authorization are separate steps. Use a supported
 
 Use your client's documented remote-MCP settings with these requirements. A client that requires dynamic registration, confidential-client secrets or automatic refresh needs a compatible supported configuration; do not change Clipzu's authorization policy to accommodate it. The named-client commands below are examples, not dependencies or a restriction on which agent can use Clipzu.
 
-## Install from a local standalone folder
+## Install from the public repository
+
+From the project where you will run the agent:
+
+```sh
+npx skills add clipzuapp/clipzu-mcp
+```
+
+Select the supported client(s) and the five Clipzu skills. For automation, an optional Codex example is `npx skills add clipzuapp/clipzu-mcp --agent codex --skill '*' --copy --yes`; use your client's supported agent name instead. No local Clipzu server or private application repository is needed.
+
+## Install from a downloaded standalone folder
 
 In the project where you will run the agent, use the actual path to your extracted package:
 
@@ -28,7 +38,7 @@ Choose `claude-code` instead of `codex` for Claude Code, or install for both by 
 
 For manual installation, copy the five complete subdirectories inside `skills/` into your agent project's `.agents/skills/` for Codex or `.claude/skills/` for Claude Code. Retain each `references/` directory. Do not copy this package's whole root as a single skill. Restart or refresh the client and confirm the canonical five names appear. Review same-name personal/managed skills if they take precedence.
 
-For a future published repository, replace the explicit placeholder `OWNER` with the actual publisher and use `npx skills add OWNER/clipzu-mcp --agent codex --skill '*' --copy --yes`. This is a conditional installation pattern, not a live repository claim. No organization or remote has been selected here.
+You can obtain the standalone folder using GitHub's **Download ZIP** on [clipzuapp/clipzu-mcp](https://github.com/clipzuapp/clipzu-mcp), then install from its extracted location. This archive path supports installation without a Git clone.
 
 ## Codex: OAuth
 

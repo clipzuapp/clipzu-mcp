@@ -1,6 +1,6 @@
 # Clipzu MCP & Agent Skills
 
-Original design, editing, motion and verification skills for agents connected to Clipzu's hosted MCP service. **MCP access is currently private to approved testers. Installing these files does not grant account access or enable a public rollout.**
+Original design, editing, motion and verification skills for agents connected to Clipzu's hosted MCP service. Public distribution: [clipzuapp/clipzu-mcp](https://github.com/clipzuapp/clipzu-mcp). **MCP access is currently private to approved testers. Installing these files does not grant account access or enable a public rollout.**
 
 The editing/rendering backend stays hosted by Clipzu at `https://clipzu.com/mcp`. This package contains instructions and examples, not a local MCP server, renderer or copy of the application. You need your own authorized Clipzu account, ready owned media and a compatible client.
 
@@ -8,15 +8,15 @@ The editing/rendering backend stays hosted by Clipzu at `https://clipzu.com/mcp`
 
 ## Install
 
-Skill installation is optional for the MCP connection itself. For a client that supports Agent Skills, copy the complete skill folders into its documented skill directory, or use the Skills CLI with that client's agent name. For example, from a Codex agent project:
+Skill installation is optional for the MCP connection itself. From your agent's project directory, install the public package and choose your supported client and the five Clipzu skills:
 
 ```sh
-npx skills add ../clipzu-mcp --agent codex --skill '*' --copy --yes
+npx skills add clipzuapp/clipzu-mcp
 ```
 
-For Claude Code replace `codex` with `claude-code`. These are project installs; omit `--yes` if you want interactive review. `--copy` retains each skill's references without depending on the downloaded folder. The relative source path is an example: use the actual location of your extracted package. The installer is optional; manual installation is documented in [client setup](examples/mcp-client-setup.md).
+For an optional noninteractive client example, use `npx skills add clipzuapp/clipzu-mcp --agent codex --skill '*' --copy --yes`; choose the agent name supported by your client instead of `codex`. These are project installs. `--copy` retains each skill's references independently of the downloaded source. Manual installation from GitHub's downloaded archive is also supported; see [client setup](examples/mcp-client-setup.md).
 
-After a separate public repository is published, the same verified source syntax supports `npx skills add OWNER/clipzu-mcp --agent codex --skill '*' --copy --yes`. **OWNER is an explicit placeholder, not an existing repository or promised organization.** No public remote has been created by this package.
+The public repository contains this distribution only. No private Clipzu application checkout is required.
 
 Next, follow [MCP client setup](examples/mcp-client-setup.md) to connect and authorize. A pre-registered client ID and matching callback must be supplied by Clipzu for OAuth. Private membership is enforced independently. There is no bundled credential, shared master token or automatic client registration.
 
