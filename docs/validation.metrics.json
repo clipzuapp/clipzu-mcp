@@ -1,0 +1,238 @@
+{
+  "validationDate": "2026-10-26",
+  "environment": "isolated existing Clipzu Web/API/export-worker with disposable synthetic users",
+  "productionChanged": false,
+  "skillNames": [
+    "clipzu-best-practices",
+    "clipzu-design",
+    "clipzu-motion",
+    "clipzu-timeline",
+    "clipzu-render"
+  ],
+  "frontmatterFields": [
+    "name",
+    "description",
+    "license"
+  ],
+  "installer": {
+    "installer": "skills",
+    "installerVersion": "1.7.4",
+    "globalConfigurationChanged": false,
+    "sourceRepositoryRequired": false,
+    "results": [
+      {
+        "agent": "codex",
+        "skills": [
+          "clipzu-best-practices",
+          "clipzu-design",
+          "clipzu-motion",
+          "clipzu-render",
+          "clipzu-timeline"
+        ],
+        "source": "standalone local folder",
+        "copyRequested": true
+      },
+      {
+        "agent": "claude-code",
+        "skills": [
+          "clipzu-best-practices",
+          "clipzu-design",
+          "clipzu-motion",
+          "clipzu-render",
+          "clipzu-timeline"
+        ],
+        "source": "standalone local folder",
+        "copyRequested": true
+      }
+    ]
+  },
+  "contractsAndInstalledFiles": {
+    "actualServerTools": 9,
+    "mentionedToolsMatchActualSchemas": 9,
+    "exampleInputsValidatedByOfficialSdkAjv": 3,
+    "installedFilesCompared": 30,
+    "twoClientsHaveExactlyFiveCanonicalSkills": true,
+    "installedFilesAreCopies": true,
+    "sourceMonorepoDependency": false
+  },
+  "nativeClient": "Codex CLI 0.164.0-alpha.11.1",
+  "nativeWorkflow": {
+    "actualNativeCalls": {
+      "creative": {
+        "completedCalls": 16,
+        "successfulCalls": 16,
+        "rejectedCalls": 0
+      },
+      "errors": {
+        "completedCalls": 6,
+        "successfulCalls": 4,
+        "rejectedCalls": 2
+      },
+      "readonly": {
+        "completedCalls": 3,
+        "successfulCalls": 2,
+        "rejectedCalls": 1
+      },
+      "review": {
+        "completedCalls": 2,
+        "successfulCalls": 2,
+        "rejectedCalls": 0
+      },
+      "correct": {
+        "completedCalls": 12,
+        "successfulCalls": 12,
+        "rejectedCalls": 0
+      }
+    },
+    "allNineNativeToolsUsed": true,
+    "oneEditableProject": true,
+    "exactlyTwoRealCompletedExports": true,
+    "errorTestsAdmittedNoExtraJobs": true,
+    "staleRevisionReported": true,
+    "readonlyScopeReported": true,
+    "unavailableCapabilitiesExplained": true,
+    "noSuccessfulErrorOrReviewWrites": true,
+    "correctionPreservedAllOtherVisualsAudioAndTracks": true,
+    "finalRevision": 4,
+    "finalKeyframePoints": 26,
+    "properties": [
+      "opacity",
+      "positionX",
+      "scale",
+      "rotation",
+      "positionY"
+    ],
+    "savedDocumentUnchangedAfterActualEditorReopen": true,
+    "visualReviewDetectedUnintendedClipping": true,
+    "correctedOnlyWithSupportedMcpOperations": true,
+    "productionTouched": false
+  },
+  "creativePlanning": {
+    "directionBeforeFirstWrite": true,
+    "exactPaletteNotVisuallyInspectedUntilReview": true,
+    "actualImageReviewDetectedFramingDefect": true,
+    "boundedCorrectionAndSecondRealExport": true
+  },
+  "media": {
+    "realIsolatedWebWorkerOutput": true,
+    "downloadedWithOrdinaryOwnerSession": true,
+    "bytes": 1006966,
+    "sha256": "a50fb453baaf8b65ee2c87955e9c1b7b2a3c45749afc55fdb1256e29613b1cd3",
+    "video": {
+      "codec": "h264",
+      "width": 960,
+      "height": 540,
+      "fps": "30/1",
+      "start": "0.000000",
+      "duration": "6.000000",
+      "frames": "180"
+    },
+    "audio": {
+      "codec": "aac",
+      "start": "0.000000",
+      "duration": "6.000000",
+      "sampleRate": "48000"
+    },
+    "previewComparison": {
+      "resize": [
+        160,
+        90
+      ],
+      "existingToleranceMaeLessThan": 12,
+      "samples": [
+        {
+          "timeMs": 0,
+          "mae": 1.214,
+          "pass": true
+        },
+        {
+          "timeMs": 500,
+          "mae": 1.672,
+          "pass": true
+        },
+        {
+          "timeMs": 1000,
+          "mae": 1.582,
+          "pass": true
+        },
+        {
+          "timeMs": 1500,
+          "mae": 1.894,
+          "pass": true
+        },
+        {
+          "timeMs": 3000,
+          "mae": 1.762,
+          "pass": true
+        },
+        {
+          "timeMs": 4500,
+          "mae": 1.572,
+          "pass": true
+        },
+        {
+          "timeMs": 5000,
+          "mae": 1.673,
+          "pass": true
+        },
+        {
+          "timeMs": 5967,
+          "mae": 1.673,
+          "pass": true
+        }
+      ]
+    },
+    "sourceTrimMs": 500,
+    "audioPulseToleranceMs": 33.333333333333336,
+    "audioPulseSamples": [
+      {
+        "expectedMs": 1000,
+        "measuredMs": 1001,
+        "errorMs": 1,
+        "pass": true
+      },
+      {
+        "expectedMs": 3000,
+        "measuredMs": 3000,
+        "errorMs": 0,
+        "pass": true
+      },
+      {
+        "expectedMs": 5000,
+        "measuredMs": 4999,
+        "errorMs": 1,
+        "pass": true
+      }
+    ]
+  },
+  "browserPlayback": {
+    "ended": true,
+    "duration": 6,
+    "currentTime": 6,
+    "videoWidth": 960,
+    "videoHeight": 540,
+    "decodedFrames": 180,
+    "droppedFrames": 0,
+    "mediaError": null,
+    "realBrowserPlayback": true,
+    "mutedAutomation": true,
+    "listeningReviewPerformed": false,
+    "progressObserved": true
+  },
+  "securityCleanup": {
+    "onlyIsolatedFixtureUsed": true,
+    "threeLocalTaskCredentialsRevoked": true,
+    "revokedTokenHttpStatus": 401,
+    "existingHarnessStopRequested": true,
+    "productionConfigurationAndDataUntouched": true,
+    "existingHarnessExitedSuccessfully": true,
+    "isolatedWebAndApiPortsClosed": true,
+    "ownedDatabaseCleanupCompletedByHarness": true
+  },
+  "limitations": [
+    "Claude Code skill installation and command flags checked; Claude OAuth editing not live-tested",
+    "Terminal worker failure not injected; real export admission rejection exercised",
+    "Playback automation was muted; no human listening review",
+    "Private tester membership remains required; no public remote created"
+  ]
+}

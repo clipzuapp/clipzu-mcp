@@ -1,0 +1,21 @@
+# Local credentials, client configuration and generated output
+.env
+.env.*
+!.env.example
+*.credentials
+*.log
+*.mp4
+*.wav
+node_modules/
+artifacts/
+.agents/
+.claude/
+.codex/
+.mcp.json
+skills-lock.json
+.DS_Store
+Thumbs.db
+
+# Keep this standalone package's documentation publishable when nested in a checkout.
+!docs/
+!docs/**
