@@ -2,6 +2,19 @@
 
 Skill installation and account authorization are separate steps. Use a supported current client and your own approved Clipzu account. The hosted service stays at `https://clipzu.com/mcp`; there is no local Clipzu server to launch.
 
+## Common connection requirements for any client
+
+| Setting | Requirement |
+|---|---|
+| Endpoint | `https://clipzu.com/mcp` |
+| Transport | Standard MCP Streamable HTTP with a compatible negotiated protocol |
+| Authentication | Individual account authorization using supported OAuth S256 PKCE with a registered public client/callback, or an owner-issued scoped token through a secure header/environment facility |
+| Permissions | Only the scopes required by the task; private tester approval remains independent of client choice |
+| Discovery | Use standard MCP tool discovery, then call `clipzu_capabilities` before planning edits |
+| Skills | Optional open Agent Skills instructions; they are not required to connect to MCP or invoke its tools |
+
+Use your client's documented remote-MCP settings with these requirements. A client that requires dynamic registration, confidential-client secrets or automatic refresh needs a compatible supported configuration; do not change Clipzu's authorization policy to accommodate it. The named-client commands below are examples, not dependencies or a restriction on which agent can use Clipzu.
+
 ## Install from a local standalone folder
 
 In the project where you will run the agent, use the actual path to your extracted package:
@@ -48,9 +61,7 @@ claude mcp add --transport http --scope local --client-id $env:CLIPZU_OAUTH_CLIE
 
 Open Claude Code, use `/mcp`, and follow authentication. For this public client omit `--client-secret`. Confirm the actual granted scopes; read-only consent does not authorize editing/export. Scope selection and callback behavior can vary by client release. See [official Claude Code MCP setup](https://code.claude.com/docs/en/mcp). This package documents the supported client flags; it does not promise an already registered Claude client or a live-tested Claude OAuth grant.
 
-## Other clients and a first task
-
-Use Streamable HTTP with OAuth S256 PKCE and a Clipzu-approved public client/callback, or a supported secure header/environment facility for an owner-issued scoped token. A client requiring dynamic registration, confidential secrets or automatic refresh is not automatically compatible with the current service. Agent Skills support and MCP support are independent; consult the client's documented skill location.
+## A first task and revocation
 
 Ask the agent to call `clipzu_capabilities`, list projects/assets and describe what it can do before writing. Then use [a workflow](editing-workflows.md) with an authorized project. Keep ordinary approval prompts enabled. A noninteractive client may need its supported approval-review mode; never use a sandbox/approval bypass just to finish an edit.
 

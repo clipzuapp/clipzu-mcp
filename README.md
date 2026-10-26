@@ -4,9 +4,11 @@ Original design, editing, motion and verification skills for agents connected to
 
 The editing/rendering backend stays hosted by Clipzu at `https://clipzu.com/mcp`. This package contains instructions and examples, not a local MCP server, renderer or copy of the application. You need your own authorized Clipzu account, ready owned media and a compatible client.
 
+**Client-neutral:** connect with any MCP client that supports Streamable HTTP and Clipzu's account authorization. Clients with Agent Skills support can load the five skills; other MCP clients can use the tools and follow the documentation without installing skills. Codex and Claude Code setup examples are optional conveniences. Neither product is a package dependency or a requirement for using Clipzu MCP.
+
 ## Install
 
-From your agent's project directory, point the Skills CLI at the downloaded standalone folder:
+Skill installation is optional for the MCP connection itself. For a client that supports Agent Skills, copy the complete skill folders into its documented skill directory, or use the Skills CLI with that client's agent name. For example, from a Codex agent project:
 
 ```sh
 npx skills add ../clipzu-mcp --agent codex --skill '*' --copy --yes
