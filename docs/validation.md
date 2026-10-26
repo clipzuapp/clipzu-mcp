@@ -1,5 +1,7 @@
 # Distribution and real-agent validation
 
+This page records the earlier isolated distribution acceptance. Public self-service access was enabled afterward: verified active users can create their own credentials in **Settings → Developer → Access Tokens**, without tester approval. See [authentication](authentication.md) for the current access flow. Private-rollout statements below describe the earlier test conditions.
+
 Verified on 26 October 2026 using supported Node 24.22.1. This was an isolated acceptance of the existing Clipzu Web/API/FFmpeg worker, with a fresh disposable database and synthetic owned media. **No production deployment, account/cohort change, worker change or public MCP activation occurred.** No nested Git repository or new remote was created.
 
 ## Distribution checks
@@ -47,6 +49,6 @@ Separate native-agent runs exercised a stale revision and a read-only credential
 
 Capabilities were used to explain unavailable custom Bézier/procedural/native-text authoring. No successful writes occurred in the error or visual-review passes. A terminal worker failure was not deliberately injected; the export-failure test covers real admission rejection. Three temporary local credentials were revoked normally before the existing harness was asked to shut down its owned runtime.
 
-Codex editing/rendering and both clients' local skill installation were actually exercised. Claude Code 2.1.296 flags were checked against its installed CLI and official documentation; **a Claude OAuth connection/editing run was not performed**. It requires a separately approved public client ID and callback. Other clients are conditional on Streamable HTTP, authentication and Agent Skills support. Current production private-tester restrictions remain in place.
+Codex editing/rendering and both clients' local skill installation were actually exercised. Claude Code 2.1.296 flags were checked against its installed CLI and official documentation; **a Claude OAuth connection/editing run was not performed**. OAuth requires a registered public client ID and callback; this is client registration, not user/tester approval. Other clients are conditional on the supported Streamable HTTP authentication mechanisms. Agent Skills remain optional.
 
 Evidence metrics are retained in [validation.metrics.json](validation.metrics.json). MP4s, decoded frames, screenshots and raw client logs are operator-held acceptance artifacts, not required installation assets or publicly distributed customer data. The package includes no credentials, private deployment instructions or dependency on those artifact paths.

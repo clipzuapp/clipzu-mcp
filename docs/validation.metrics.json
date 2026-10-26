@@ -233,6 +233,6 @@
     "Claude Code skill installation and command flags checked; Claude OAuth editing not live-tested",
     "Terminal worker failure not injected; real export admission rejection exercised",
     "Playback automation was muted; no human listening review",
-    "Private tester membership remains required; public distribution does not grant account access"
+    "Historical isolated distribution test preceded self-service activation; current account access is described in authentication.md"
   ]
 }
